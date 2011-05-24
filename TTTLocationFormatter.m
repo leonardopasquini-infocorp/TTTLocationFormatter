@@ -185,7 +185,7 @@ static inline double CLLocationSpeedToMilesPerHour(CLLocationSpeed speed) {
                 unitString = NSLocalizedString(@"yds", @"Yard Unit");
             } else {
                 distanceString = [self.numberFormatter stringFromNumber:[NSNumber numberWithDouble:milesDistance]];
-                unitString = [distanceString floatValue] == 1.0 ? NSLocalizedString(@"mile", @"Mile Unit (Singular)") : NSLocalizedString(@"miles", @"Mile Unit (Plural)");
+                unitString = (milesDistance > 1.0 && milesDistance < 1.1) ? NSLocalizedString(@"mile", @"Mile Unit (Singular)") : NSLocalizedString(@"miles", @"Mile Unit (Plural)");
             }
             break; 
         }
